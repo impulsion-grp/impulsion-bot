@@ -2,7 +2,6 @@
   "name": "impulsion-bot-v10",
   "version": "10.0.0",
   "description": "Bot Discord Impulsion V10 complet",
-  "type": "module",
   "scripts": {
     "dev": "tsx watch src/index.ts",
     "start": "node dist/index.js",
