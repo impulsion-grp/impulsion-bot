@@ -1,15 +1,18 @@
 {
   "compilerOptions": {
     "target": "ES2022",
-    "module": "NodeNext",
-    "moduleResolution": "NodeNext",
-    "strict": true,
-    "esModuleInterop": true,
-    "skipLibCheck": true,
+    "module": "CommonJS",
+    "moduleResolution": "node",
+    "lib": ["ES2022"],
+    "rootDir": "src",
     "outDir": "dist",
-    "rootDir": ".",
-    "resolveJsonModule": true
+    "strict": false,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "types": ["node"]
   },
-  "include": ["src/**/*.ts", "scripts/**/*.mjs"],
+  "include": ["src/**/*.ts"],
   "exclude": ["node_modules", "dist"]
 }

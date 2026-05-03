@@ -1,6 +1,6 @@
 import "dotenv/config";
 import { Client, Events, GatewayIntentBits } from "discord.js";
-import { env, assertRequiredEnv } from "./config/env";
+import { env, assertRequiredEnv } from "./config/env.js";
 import { logger } from "./core/logger";
 import { commandMap } from "./commands/index";
 import { handleWelcome, registerAutomations } from "./services/basic.services";
