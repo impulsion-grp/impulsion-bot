@@ -1,0 +1,11 @@
+import "dotenv/config";
+import { REST, Routes } from "discord.js";
+import { commands } from "./commands/index";
+import { env, assertRequiredEnv } from "./config/env";
+import { logger } from "./core/logger";
+assertRequiredEnv();
+const rest = new REST({ version: "10" }).setToken(env.DISCORD_TOKEN);
+const body = commands.map(c => c.data.toJSON());
+logger.info(`Déploiement de ${body.length} commandes slash...`);
+await rest.put(Routes.applicationGuildCommands(env.CLIENT_ID, env.GUILD_ID), { body });
+logger.success("Commandes slash déployées.");

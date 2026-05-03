@@ -1,0 +1,31 @@
+{
+  "name": "impulsion-bot-v10",
+  "version": "10.0.0",
+  "description": "Bot Discord Impulsion V10 complet",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "start": "node dist/index.js",
+    "build": "tsc",
+    "deploy": "tsx src/deploy-commands.ts",
+    "smoke": "node scripts/smoke-check.mjs"
+  },
+  "dependencies": {
+    "@discordjs/voice": "^0.18.0",
+    "cheerio": "^1.0.0",
+    "date-fns": "^4.1.0",
+    "date-fns-tz": "^3.2.0",
+    "discord.js": "^14.16.3",
+    "dotenv": "^16.4.7",
+    "node-cron": "^4.2.1",
+    "openai": "^4.80.1",
+    "play-dl": "^1.9.7",
+    "rss-parser": "^3.13.0",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  }
+}
