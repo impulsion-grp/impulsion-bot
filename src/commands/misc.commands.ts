@@ -1,4 +1,4 @@
-import { ChannelType, SlashCommandBuilder } from "discord.js";
+import { ChannelType, SlashCommandBuilder, TextChannel } from "discord.js";
 import { BotCommand } from "../core/command";
 import { getDocContent, playMusic, stopMusic } from "../services/basic.services";
 
@@ -26,7 +26,7 @@ export const docsCommand: BotCommand = {
     if (interaction.options.getSubcommand() === "afficher") { await interaction.reply({ephemeral:true, content}); return; }
     const channel = interaction.options.getChannel("salon", true);
     if (channel.type !== ChannelType.GuildText) { await interaction.reply({ephemeral:true, content:"Salon invalide."}); return; }
-    await channel.send(content);
+    await (channel as TextChannel).send(content);
     await interaction.reply({ephemeral:true, content:"✅ Documentation publiée."});
   }
 };
